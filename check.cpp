@@ -11,7 +11,6 @@ if no, display the previous inputs and then terminate
 #include <string>
 #include <cstring>
 #include <cctype>
-#include <Windows.h>
 
 using namespace std;
 
@@ -68,12 +67,10 @@ int main() {
     cout << "\n" << name << " ";
 
     cout << "\n\nClosing the program...";
-    Sleep(3000);
   }
 
   else {
     cout << "Invalid input. Try again.";
-    Sleep(1000);
     goto choose;
   }
   

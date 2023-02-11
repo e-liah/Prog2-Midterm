@@ -14,8 +14,14 @@ if no, display the previous inputs and then terminate
 
 using namespace std;
 
-int main() {
+void prog();
 
+int main() {
+  prog();
+  return 0;
+}
+
+void prog() {
   string name, hold, store;
   char choice;
   int i, c;
@@ -39,8 +45,6 @@ int main() {
     }
   }
 
-    //store[i] = hold[i];
-
   for (int i = 0; i < hold[i]; i++) {
       cout << hold[i];
     }
@@ -59,7 +63,6 @@ int main() {
     cout << "\n\nHistory of inputs: ";
     
     for (int i = 0; i < c; i++) {
-      //name[i] = hold[i];
       name += hold[i];
       store[c] = name[i];
 
@@ -73,6 +76,6 @@ int main() {
     cout << "Invalid input. Try again.";
     goto choose;
   }
-  
-  return 0;
+  return;
 }
+

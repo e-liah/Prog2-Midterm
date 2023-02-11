@@ -18,7 +18,7 @@ int main() {
 
   string name, hold, store;
   char choice;
-  int i, j;
+  int i, c;
 
   start:
   cout << "\nEnter a name: ";
@@ -28,19 +28,21 @@ int main() {
   for (int i = 0; i < hold.length(); i++) {
     if (islower(hold[i])) { //converts lowercase letters into uppercase
       hold[i] = toupper(hold[i]);
-      store[i] = hold[i];
+      store[c] = hold[i];
+      c++;
     }
 
     else if (isupper(hold[i])) { //converts uppercase letters into lowercase
       hold[i] = tolower(hold[i]);
-      store[i] = hold[i];
+      store[c] = hold[i];
+      c++;
     }
   }
 
     //store[i] = hold[i];
 
   for (int i = 0; i < hold[i]; i++) {
-      cout << store[i];
+      cout << hold[i];
     }
     
   choose:
@@ -49,17 +51,19 @@ int main() {
   cin.ignore();
 
   if (choice == 'Y' || choice == 'y') {  //need to save the input 
-    
+    c++;
     goto start;
   }
 
   else if (choice == 'N' || choice == 'n') {
-    for (int i = 0; i < hold.length(); i++) {
-      name[i] = hold[i];
+    cout << "\n\nHistory of inputs: ";
+    
+    for (int i = 0; i < c; i++) {
+      //name[i] = hold[i];
       name += hold[i];
-      store = name[i];
+      store[c] = name[i];
 
-      cout << store;
+      cout << store[i];
     }
     
     cout << "\n\nClosing the program...";

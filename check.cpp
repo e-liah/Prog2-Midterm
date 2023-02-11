@@ -16,56 +16,52 @@ using namespace std;
 
 int main() {
 
-  string name, hold;
+  string name, hold, store;
   char choice;
   int i, j;
 
   start:
   cout << "\nEnter a name: ";
   getline(cin, name);
+  hold = name;
 
-  //hold = name;
-
-  for (int i = 0; name[i] != '\0'; i++) {
-    if (islower(name[i])) { //converts lowercase letters into uppercase
-      hold[i] = toupper(name[i]);
+  for (int i = 0; i < hold.length(); i++) {
+    if (islower(hold[i])) { //converts lowercase letters into uppercase
+      hold[i] = toupper(hold[i]);
+      store[i] = hold[i];
     }
 
-    else if (isupper(name[i])) { //converts uppercase letters into lowercase
-      hold[i] = tolower(name[i]);
+    else if (isupper(hold[i])) { //converts uppercase letters into lowercase
+      hold[i] = tolower(hold[i]);
+      store[i] = hold[i];
     }
-
-    /*if (hold[i] == '\0') {
-      name[i] = hold[i];
-    }*/
   }
 
-  for (int i = 0; hold[i] != '\0'; i++) {
-      cout << hold[i];
-    }
+    //store[i] = hold[i];
 
+  for (int i = 0; i < hold[i]; i++) {
+      cout << store[i];
+    }
+    
   choose:
   cout << "\nWould you like to try again? [Y/N] ";
   cin >> choice;
   cin.ignore();
 
   if (choice == 'Y' || choice == 'y') {  //need to save the input 
+    
     goto start;
   }
 
   else if (choice == 'N' || choice == 'n') {
-    //for (int i = 0; memo[i] != '\0'; i++) {
-      /*for (int j = 0; name[j] != '\0'; j++, i++){
-        memo[i] = name[j];
-      }*/
-
-     for (int i = 0; i < hold[i]; i++) {
+    for (int i = 0; i < hold.length(); i++) {
       name[i] = hold[i];
       name += hold[i];
+      store = name[i];
+
+      cout << store;
     }
-
-    cout << "\n" << name << " ";
-
+    
     cout << "\n\nClosing the program...";
   }
 
